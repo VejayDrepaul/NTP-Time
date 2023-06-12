@@ -32,7 +32,8 @@ int main(int argc, char *argv[]) {
 	ntp_info ntp_packet;
 	time_t ntp_time;
 	struct sockaddr_in server_addr;
-	
+
+	// creation of UDP socket
 	int sock_desc = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
 	if (sock_desc < 0) {
 		perror("Failed to create UDP socket!\n");
@@ -67,8 +68,8 @@ int main(int argc, char *argv[]) {
 		return -1;
 	}
 
+	// conversion of time stamp
 	ntp_time = ntohl(ntp_packet.trans_time_sec) - NTP_UNIX_EPOCH_DIFF; 
-
 	printf("%s", ctime(&ntp_time));
 
 	close(sock_desc);
