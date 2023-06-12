@@ -33,6 +33,7 @@ typedef struct {
 int main(int argc, char *argv[]) {
 	ntp_info ntp_packet;
 	time_t ntp_time;
+	char *time;
 	struct sockaddr_in server_addr;
 
 	// creation of UDP socket
@@ -72,7 +73,8 @@ int main(int argc, char *argv[]) {
 
 	// conversion of time stamp
 	ntp_time = ntohl(ntp_packet.trans_time_sec) - NTP_UNIX_EPOCH_DIFF; 
-	printf("%s", ctime(&ntp_time));
+	time = ctime(&ntp_time);
+	printf("%s", time);
 
 	close(sock_desc);
 
