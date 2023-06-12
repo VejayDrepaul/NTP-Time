@@ -10,6 +10,7 @@
 #define NTP_PORT 123
 #define NTP_PACKET_SIZE 48
 #define NTP_UNIX_EPOCH_DIFF 2208988800UL
+
 typedef struct {
     uint8_t li_vn_mode; // stores leap indicator, version number, mode
     uint8_t stratum;
