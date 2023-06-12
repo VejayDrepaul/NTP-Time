@@ -1,6 +1,7 @@
 # User-specific files/folders
 .vscode/
 test.c
+ntp_time
 
 # Prerequisites
 *.d
