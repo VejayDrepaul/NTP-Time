@@ -2,6 +2,7 @@
 .vscode/
 test.c
 ntp_time
+ntp_time.c
 
 # Prerequisites
 *.d
